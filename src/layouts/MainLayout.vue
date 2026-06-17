@@ -1,31 +1,46 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn flat dense round icon="menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-toolbar-title class="text-weight-bold">
+          ❄️ Electro Frío
+        </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-chip color="white" text-color="primary" icon="verified">
+          Sistema Técnico
+        </q-chip>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered :width="260">
+      <div class="q-pa-md bg-primary text-white">
+        <div class="text-h6 text-weight-bold">Electro Frío</div>
+        <div class="text-caption">Gestión de servicios técnicos</div>
+      </div>
 
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
+      <q-list padding>
+        <q-item clickable v-ripple to="/" exact>
+          <q-item-section avatar>
+            <q-icon name="dashboard" />
+          </q-item-section>
+          <q-item-section>Dashboard</q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple to="/clientes">
+          <q-item-section avatar>
+            <q-icon name="groups" />
+          </q-item-section>
+          <q-item-section>Clientes</q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple to="/servicios">
+          <q-item-section avatar>
+            <q-icon name="build" />
+          </q-item-section>
+          <q-item-section>Servicios</q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -37,56 +52,10 @@
 
 <script setup>
 import { ref } from 'vue'
-import EssentialLink from '@/components/EssentialLink.vue'
-
-const linksList = [
-  {
-    label: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    label: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    label: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    label: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    label: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    label: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    label: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
 
 const leftDrawerOpen = ref(false)
 
-function toggleLeftDrawer() {
+const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
 </script>
