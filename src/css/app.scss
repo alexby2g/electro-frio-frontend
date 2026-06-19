@@ -1,1 +1,61 @@
-// app global css
+body {
+  background: #eef5fb;
+}
+
+.main-header {
+  background: linear-gradient(135deg, #0f4c81, #1976d2 55%, #00acc1);
+}
+
+.main-drawer {
+  background: #f8fbff;
+}
+
+.drawer-header {
+  color: white;
+  background: linear-gradient(135deg, #0f4c81, #1976d2);
+}
+
+.menu-active {
+  color: #0f4c81;
+  background: rgba(25, 118, 210, 0.12);
+  font-weight: 700;
+  border-radius: 12px;
+}
+
+.page-shell {
+  min-height: calc(100vh - 50px);
+  background: radial-gradient(circle at top left, rgba(0, 172, 193, 0.14), transparent 34%), #eef5fb;
+}
+
+.hero-card {
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0f4c81, #1976d2 60%, #00acc1);
+  color: white;
+  box-shadow: 0 14px 35px rgba(15, 76, 129, 0.25);
+}
+
+.stat-card,
+.content-card {
+  border-radius: 18px;
+  border: 1px solid rgba(25, 118, 210, 0.08);
+  box-shadow: 0 8px 24px rgba(15, 76, 129, 0.08);
+}
+
+.stat-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(25, 118, 210, 0.12);
+}
+
+.table-actions .q-btn {
+  margin: 0 2px;
+}
+
+.rounded-dialog {
+  border-radius: 18px;
+  overflow: hidden;
+}
